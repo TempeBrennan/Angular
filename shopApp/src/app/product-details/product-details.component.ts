@@ -20,7 +20,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   addToCart(product) {
-    alert('');
+    alert('Your product has been added to the cart!');
     this.cartService.addToCart(product);
   }
 
