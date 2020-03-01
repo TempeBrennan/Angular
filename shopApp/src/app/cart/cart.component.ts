@@ -15,8 +15,8 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService, private formBuilder: FormBuilder) {
     this.checkoutForm = this.formBuilder.group({
       //与 formControlName 对应
-      name1: '',
-      address1: ''
+      name: '',
+      address: ''
     })
   }
 
