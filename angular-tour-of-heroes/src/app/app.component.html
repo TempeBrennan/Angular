@@ -5,3 +5,11 @@
 </nav>
 <router-outlet></router-outlet>
 <app-messages></app-messages>
+<br>
+<br>
+<h1>------------------------------------------------CustomElement------------------------------------------------</h1>
+<input #input value="Message">
+<button (click)="popup.showAsComponent(input.value)">Show as component</button>
+<button (click)="popup.showAsElement(input.value)">Show as element</button>
+<!-- <popup-element message="message"></popup-element> -->
+<!-- <input [(ngModel)]="message"> -->
