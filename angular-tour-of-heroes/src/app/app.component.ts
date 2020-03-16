@@ -13,6 +13,8 @@ export class AppComponent {
 
   message = 'aaa';
 
+  color: string;
+
   constructor(injector: Injector, public popup: PopupService) {
 
     // 记得用 ng add @angular/elements，否则Edge不支持
