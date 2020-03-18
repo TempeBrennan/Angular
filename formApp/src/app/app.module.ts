@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NameEditorComponent } from './name-editor/name-editor.component';
-
-import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 
 @NgModule({
@@ -15,6 +14,7 @@ import { ProfileEditorComponent } from './profile-editor/profile-editor.componen
   ],
   imports: [
     BrowserModule,
+    // other imports ...
     ReactiveFormsModule
   ],
   providers: [],
