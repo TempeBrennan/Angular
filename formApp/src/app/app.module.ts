@@ -4,13 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NameEditorComponent } from './name-editor/name-editor.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
     NameEditorComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
