@@ -15,7 +15,7 @@
 <!-- <input [(ngModel)]="message"> -->
 
 
-br>
+<br>
 <br>
 <h1>------------------------------------------------Attribute Directive------------------------------------------------</h1>
 
@@ -30,3 +30,9 @@ br>
 <p [appHighlight]="color" defaultColor="violet">
   Highlight me too!
 </p>
+
+<br>
+<br>
+<h1>------------------------------------------------Structural Directive------------------------------------------------</h1>
+<input type="checkbox" [(ngModel)]="condition">
+<p *appUnless="condition">Show this sentence unless the condition is true.</p>

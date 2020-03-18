@@ -13,6 +13,8 @@ export class AppComponent {
 
   message = 'aaa';
 
+  condition = false;
+
   color: string;
 
   constructor(injector: Injector, public popup: PopupService) {

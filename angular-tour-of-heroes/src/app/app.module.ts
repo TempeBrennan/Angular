@@ -19,6 +19,7 @@ import { PopupService } from './custom-element/popup.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HighlightDirective } from './highlight.directive';
+import { UnlessDirective } from './unless.diretive';
 
 @NgModule({
   imports: [
@@ -44,7 +45,8 @@ import { HighlightDirective } from './highlight.directive';
     MessagesComponent,
     HeroSearchComponent,
     PopupComponent,
-    HighlightDirective
+    HighlightDirective,
+    UnlessDirective
   ],
   bootstrap: [AppComponent],
   providers:[PopupService]
