@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-test';
+
+  show(e:any){
+    alert(e.target.id);
+  }
 }

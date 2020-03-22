@@ -1,1 +1,45 @@
 <p>simple-test works!</p>
+<button id='btn' (click)="raise($event)">button</button>
+<br>
+<br>
+<br>
+
+<table>
+    <tr>
+        <th>name</th>
+        <th>age</th>
+        <th>address</th>
+    </tr>
+    <tr *ngFor="let stu of stus">
+        <td>{{stu.name}}</td>
+        <td>{{stu.age}}</td>
+        <td>{{stu.address}}</td>
+    </tr>
+</table>
+<br>
+<br>
+<input [(ngModel)]="isShow" type="checkbox">
+<div *ngIf="isShow">This is a div element</div>
+
+<br>
+<br>
+<br>
+
+<label><input type="radio" name="type" value="comp1" [(ngModel)]="compType">First Component</label>
+<label><input type="radio" name="type" value="comp2" [(ngModel)]="compType">Second Component</label>
+<label><input type="radio" name="type" value="comp3" [(ngModel)]="compType">Third Component</label>
+
+<ng-container [ngSwitch]="compType">
+    <div *ngSwitchCase="'comp1'">This is Our First Component</div>
+    <div *ngSwitchCase="'comp2'">This is Our Second Component--><input></div>
+    <div *ngSwitchCase="'comp3'">This is Our Third Component<button>button</button></div>
+    <div *ngSwitchDefault>This is default</div>
+</ng-container>
+<br>
+<br>
+<br>
+
+<div>
+    student name is {{stu?.name}}<br>
+    student age is {{stu?.age}}
+</div>
