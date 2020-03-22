@@ -6,4 +6,14 @@ import { Injectable } from '@angular/core';
 export class TestParentChildService {
 
   constructor() { }
+
+  private _message:string;
+
+  setMessage(v:string){
+    this._message=v;
+  }
+
+  getMessage(){
+    return this._message;
+  }
 }

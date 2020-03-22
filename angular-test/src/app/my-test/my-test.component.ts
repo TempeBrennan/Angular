@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TestParentChildService } from '../test-parent-child.service';
 
 @Component({
   selector: 'app-my-test',
@@ -8,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MyTestComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,private serice:TestParentChildService) { }
 
   ngOnInit() {
   }
@@ -17,6 +18,12 @@ export class MyTestComponent implements OnInit {
 
   show() {
     alert('This is my -test component');
+  }
+
+  message;
+
+  addMessage() {
+    this.serice.setMessage(this.message);
   }
 
 }

@@ -3,9 +3,10 @@
 
 <router-outlet></router-outlet> -->
 
-<app-my-test #child></app-my-test>
+<!-- <app-my-test #child></app-my-test>
 
 <button (click)="child.show()">test1</button>
+ -->
+<div [style.border]="'1px solid black'"><app-my-test></app-my-test><br><br></div>
 
-
-<button (click)="test()">test2</button>
+<button (click)="test()">get child message</button>
