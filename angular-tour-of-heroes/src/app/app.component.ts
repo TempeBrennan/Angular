@@ -24,6 +24,6 @@ export class AppComponent {
     // Convert `PopupComponent` to a custom element.
     const PopupElement = createCustomElement(PopupComponent, { injector });
     // Register the custom element with the browser.
-    customElements.define('popup-element', PopupElement);
+    customElements.define('popup-element', PopupElement as any);
   }
 }

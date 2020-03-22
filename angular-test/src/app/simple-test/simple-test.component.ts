@@ -1,4 +1,4 @@
-import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-simple-test',
@@ -6,6 +6,15 @@ import { Component, OnInit, Output,EventEmitter } from '@angular/core';
   styleUrls: ['./simple-test.component.css']
 })
 export class SimpleTestComponent implements OnInit {
+
+  _progess;
+  @Input()
+  get progress(){
+    return this._progess;
+  }
+  set progress(v){
+    this._progess=v;
+  }
 
   @Output('myEvent')
   clickEvent = new EventEmitter<any>();
@@ -50,5 +59,10 @@ export class SimpleTestComponent implements OnInit {
 
   compType;
 
-  stu=null;
+  stu=this.stus[1];
+  str = 'This Is String'
+  myDate=new Date();
+  data=0.234
+
+  testNum='23'
 }
