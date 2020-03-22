@@ -3,4 +3,9 @@
 
 <router-outlet></router-outlet> -->
 
-<app-my-test ></app-my-test>
+<app-my-test #child></app-my-test>
+
+<button (click)="child.show()">test1</button>
+
+
+<button (click)="test()">test2</button>

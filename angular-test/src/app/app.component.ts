@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MyTestComponent } from './my-test/my-test.component';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +11,12 @@ export class AppComponent {
 
   show(e:any){
     alert(e.target.id);
+  }
+
+  @ViewChild(MyTestComponent,null)
+  private child;
+
+  test(){
+    this.child.show();
   }
 }
