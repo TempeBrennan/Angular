@@ -1,0 +1,42 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+    <label>
+        Name:
+        <input formControlName="name" required>
+    </label>
+    <label>
+        Address:
+        <input formControlName="address" [style.width.px]="300">
+    </label>
+    <label>
+        Hobby:
+        <input formControlName="hobby">
+    </label>
+    <div formGroupName="questions">
+        <label>
+            Qusetion1:
+            <input formControlName="question1" required>
+        </label>
+        <label>
+            Answer1:
+            <input formControlName="answer1" required>
+        </label>
+        <label>
+            Qusetion2:
+            <input formControlName="question2" required>
+        </label>
+        <label>
+            Answer2:
+            <input formControlName="answer2" required>
+        </label>
+    </div>
+    <div formArrayName="tels">
+        Telphone
+        <button (click)="addTel()">+</button>
+
+        <label *ngFor="let tel of telList.controls;let i = index">
+            <input [formControlName]="i">
+        </label>
+    </div>
+
+    <button (click)="onSubmit()" [disabled]="!form.valid" [style.margin-top.px]="50">submit</button>
+</form>
