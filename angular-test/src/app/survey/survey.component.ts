@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
+import { FormBuilder, Validators, FormArray, FormControl, ValidatorFn, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-survey',
@@ -9,7 +9,7 @@ import { FormBuilder, Validators, FormArray, FormControl } from '@angular/forms'
 export class SurveyComponent implements OnInit {
 
   form = this.fb.group({
-    name: ['', Validators.required],
+    name: ['', [Validators.required, Validators.minLength(4), forbiddenNameValidator(/^\d{4}$/)]],
     address: [''],
     hobby: [''],
     questions: this.fb.group({
@@ -35,16 +35,27 @@ export class SurveyComponent implements OnInit {
     return this.form.get("tels") as FormArray;
   }
 
-  ngOnInit() {
-    this.form.patchValue({
-      name: 'zhangsan',
-      address: 'England',
-      questions: {
-        question1: "What's your name?",
-        answer1: 'My name is zhangsan'
-      },
-      tels: ['13023489283'],
-    });
+  get name() {
+    return this.form.get('name');
   }
 
+  ngOnInit() {
+    // this.form.patchValue({
+    //   name: 'zhangsan',
+    //   address: 'England',
+    //   questions: {
+    //     question1: "What's your name?",
+    //     answer1: 'My name is zhangsan'
+    //   },
+    //   tels: ['13023489283'],
+    // });
+  }
+
+}
+
+export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const forbidden = nameRe.test(control.value);
+    return forbidden ? { 'forbiddenValue': { value: control.value } } : null;
+  };
 }

@@ -2,6 +2,17 @@
     <label>
         Name:
         <input formControlName="name" required>
+        <ng-container *ngIf="name.invalid && (name.touched || name.dirty)" >
+            <div *ngIf="name.errors.required" class="error">
+                Name is required.
+            </div>
+            <div *ngIf="name.errors.minlength" class="error">
+                Name must be at least 4 characters long.
+            </div>
+            <div *ngIf="name.errors.forbiddenValue" class="error">
+                Name can not be four number.
+            </div>
+        </ng-container>
     </label>
     <label>
         Address:

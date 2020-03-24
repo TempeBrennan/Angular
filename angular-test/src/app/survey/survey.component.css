@@ -7,7 +7,7 @@
   
   label {
     display: block;
-    width: 6em;
+    width: 15em;
     margin: .5em 0;
     color: #607D8B;
     font-weight: bold;
@@ -17,6 +17,8 @@
     height: 2em;
     font-size: 1em;
     padding-left: .4em;
+    border-radius: 4px;
+    border: 1px solid #ccc;
   }
 
   button {
@@ -37,3 +39,7 @@
     color: #ccc;
     cursor: auto;
   }
+
+.error {
+    color: #a94442;
+}
