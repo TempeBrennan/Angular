@@ -1,10 +1,14 @@
 <label>
     Name:
-    <input type="text" [formControl]="name">
+    <input type="text" [formControl]="name" #test>
 </label>
 
 <p>
     Value: {{ name.value }}
+</p>
+
+<p>
+    Value: {{ test.value }}
 </p>
 
 <p>

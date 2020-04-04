@@ -1,0 +1,92 @@
+<h1>Interviewee Information Collection Form</h1>
+<form [formGroup]="formGroup" (ngSubmit)="ngSubmit()">
+
+    <div>
+        <p>Your Name:</p>
+        <input type="text" formControlName="name">
+    </div>
+
+    <div>
+        <p>Your Sex:</p>
+        <label>
+            Male
+            <input type="radio" value="Male" formControlName="sex">
+        </label>
+        <label>
+            Female
+            <input type="radio" value="Female" formControlName="sex">
+        </label>
+    </div>
+
+    <div>
+        <p>Your Address:</p>
+        <input type="text" formControlName="address">
+    </div>
+
+    <div>
+        <p>Are yu student?</p>
+        <input type='checkbox' formControlName="isStudent">
+    </div>
+
+    <div>
+        <p>Your Font end techicals:</p>
+        <ng-container formArrayName='technicals'>
+            <label *ngFor='let n of arr; let i=index'>
+                <input type="checkbox" [formControlName]="i">
+                {{data[i]}}
+            </label>
+        </ng-container>
+    </div>
+
+    <div>
+        <p>Your Province:</p>
+        <select formControlName="province">
+            <option>SiChuan</option>
+            <option>ShanXi</option>
+            <option>YunNan</option>
+            <option>Shanghai</option>
+            <option>BeiJing</option>
+            <option>ZheJiang</option>
+            <option>GuangZhou</option>
+        </select>
+    </div>
+
+    <div>
+        <p>Your Hobby:</p>
+        <input type='text' formControlName="hobby">
+    </div>
+
+    <div formGroupName="company" class="company">
+        <div>
+            <p>first company name:</p>
+            <input type='text' formControlName="first">
+        </div>
+        <div>
+            <p>second company name:</p>
+            <input type='text' formControlName="second">
+        </div>
+        <div>
+            <p>third company name:</p>
+            <input type='text' formControlName="third">
+        </div>
+    </div>
+</form>
+
+<button>save</button>
+
+<h3>Property:</h3>
+
+<h4>value:</h4>
+<h5>{{formGroup.value | json}}</h5>
+
+<h4>valid:</h4>
+<h5>{{formGroup.valid}}</h5>
+
+<h3>status:</h3>
+<h5>{{formGroup.status}}</h5>
+
+<h3>Method:</h3>
+<button (click)="setValue()">setValue</button>
+<button (click)="patchValue()">patchValue</button>
+<button (click)="getControl()">getControl</button>
+<button (click)="reset()">reset</button>

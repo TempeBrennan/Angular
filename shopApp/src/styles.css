@@ -81,12 +81,12 @@
     color: white;
     border: none;
   }
-  
+
   .button:hover, button:hover {
     opacity: 0.8;
     font-weight: normal;
   }
-  
+
   .button:disabled, button:disabled {
     opacity: 0.5;
     cursor: auto;
