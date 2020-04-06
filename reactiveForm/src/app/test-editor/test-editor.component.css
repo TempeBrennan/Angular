@@ -15,7 +15,7 @@ button{
     font-size: 15px;
 }
 
-input[type='text'], select{
+input[type='text'], input[type='number'], select{
     border: 1px solid #c2c2c2;
     box-shadow: 1px 1px 4px #ebebeb;
     border-radius: 3px;
@@ -43,4 +43,8 @@ p{
 
 label{
     margin: 0px 5px;
+}
+
+.invalid-message{
+    color: red;
 }

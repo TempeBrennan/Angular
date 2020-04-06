@@ -11,6 +11,7 @@ import { TestEditorComponent } from './test-editor/test-editor.component';
 
 const routes: Routes = [
   { path: 'test', component:TestEditorComponent },
+  { path: '', component:TestEditorComponent },
   // { path: 'test/:myParam', component: MyTestComponent },
 ];
 

@@ -4,6 +4,9 @@
     <div>
         <p>Your Name:</p>
         <input type="text" formControlName="name">
+        <div *ngIf="(name.touched || name.dirty) && name.invalid" class="invalid-message">
+            <div *ngIf="name.errors.required">name is required</div>
+        </div>
     </div>
 
     <div>
@@ -19,8 +22,29 @@
     </div>
 
     <div>
+        <p>Your Age:</p>
+        <input type="number" formControlName="age">
+        <div *ngIf="(age.touched || age.dirty) && age.invalid" class="invalid-message">
+            <div *ngIf="age.errors.min">Sorry! We want your age over 20</div>
+            <div *ngIf="age.errors.max">Sorry! We want your age below 35</div>
+        </div>
+    </div>
+
+    <div>
+        <p>Your graduateDate:</p>
+        <input type="date" formControlName="graduateDate">
+        <div *ngIf="(graduateDate.touched || graduateDate.dirty) && graduateDate.invalid" class="invalid-message">
+            <div *ngIf="graduateDate.errors.invalidDate">Date is invalid!</div>
+        </div>
+    </div>
+
+    <div>
         <p>Your Address:</p>
         <input type="text" formControlName="address">
+        <div *ngIf="(address.touched || address.dirty) && address.invalid" class="invalid-message">
+            <div *ngIf="address.errors.minlength">text min length is 5</div>
+            <div *ngIf="address.errors.maxlength">text max length is 10</div>
+        </div>
     </div>
 
     <div>
@@ -54,6 +78,9 @@
     <div>
         <p>Your Hobby:</p>
         <input type='text' formControlName="hobby">
+        <div *ngIf="(hobby.touched || hobby.dirty) && hobby.invalid" class="invalid-message">
+            <div *ngIf="hobby.errors.pattern">Can not pass regular expression</div>
+        </div>
     </div>
 
     <div formGroupName="company" class="company">
