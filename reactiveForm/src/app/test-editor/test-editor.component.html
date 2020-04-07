@@ -34,7 +34,7 @@
         <p>Your graduateDate:</p>
         <input type="date" formControlName="graduateDate">
         <div *ngIf="(graduateDate.touched || graduateDate.dirty) && graduateDate.invalid" class="invalid-message">
-            <div *ngIf="graduateDate.errors.invalidDate">Date is invalid!</div>
+            <div *ngIf="graduateDate.errors.invalidDate">Date is invalid! {{graduateDate.errors.date}}</div>
         </div>
     </div>
 

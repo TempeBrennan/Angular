@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormArray, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, FormArray, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'app-test-editor',
@@ -20,13 +20,13 @@ export class TestEditorComponent implements OnInit {
       sex: new FormControl(),
       technicals: new FormArray([]),
       province: new FormControl(),
-      hobby: new FormControl('', Validators.pattern('^[a-z0-9_-]{8,15}')),
+      hobby: new FormControl('', Validators.pattern('^[a-z0-9]{8,15}')),
       company: new FormGroup({
         first: new FormControl(),
         second: new FormControl(),
         third: new FormControl(),
       }),
-    })
+    },{ validators: identityRevealedValidator });
   }
 
   ngOnInit() {
@@ -97,6 +97,12 @@ export function dateValidator(min: Date, max: Date): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } | null => {
     var cur = new Date(control.value);
     const result = cur >= min && cur <= max;
-    return result ? null : { 'invalidDate': { value: cur } };
+    return result ? null : { 'invalidDate': { value: cur }, 'date': { value: 'From TS' } };
   };
 }
+
+export const identityRevealedValidator: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
+  const name = control.get('name');
+  const address = control.get('address');
+  return name && address && name.value === address.value ? { 'identityRevealed': true } : null;
+};
