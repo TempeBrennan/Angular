@@ -11,6 +11,7 @@ import { SelfComponent } from './self/self.component';
 import { SkipselfComponent } from './skipself/skipself.component';
 import { HostParentComponent } from './host-parent/host-parent.component';
 import { HostChildComponent } from './host-child/host-child.component';
+import { SelfChildComponent } from './self-child/self-child.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { HostChildComponent } from './host-child/host-child.component';
     HostComponent,
     SkipselfComponent,
     HostParentComponent,
-    HostChildComponent
+    HostChildComponent,
+    SelfChildComponent
   ],
   bootstrap: [AppComponent],
   providers: []
